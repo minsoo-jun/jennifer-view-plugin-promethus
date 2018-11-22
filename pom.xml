@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.aries</groupId>
-    <artifactId>realtimeapi</artifactId>
-    <version>1.1.0</version>
+    <artifactId>prometheus</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>realtimeapi</name>
-    <description>Realtime API</description>
+    <name>prometheus</name>
+    <description>Realtime API for Prometheus</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -61,15 +61,13 @@
     </dependencies>
 
     <profiles>
+
         <!-- 독립적으로 실행되는 플러그인 jar 파일 -->
         <profile>
             <id>local</id>
             <properties>
                 <env>local</env>
             </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <dependencies>
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
@@ -102,6 +100,9 @@
             <properties>
                 <env>jennifer</env>
             </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <dependencies>
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
@@ -156,6 +157,16 @@
                 </plugins>
             </build>
         </profile>
-    </profiles>
 
+    </profiles>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://support.jennifersoft.com:8081/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>mvnrepository</id>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
 </project>
