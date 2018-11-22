@@ -21,8 +21,6 @@ public class RealtimeAPIController extends PluginController {
     private static final String URL = PropertyUtil.getValue("realtimeapi", "url", "http://127.0.0.1:7900");
     private static final String TOKEN = PropertyUtil.getValue("realtimeapi", "token", "");
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
     @RequestMapping(value = {"/realtimeapi/prometheus"}, method = RequestMethod.GET,produces = "text/plain; charset=utf-8")
     @ResponseBody
     public String getDomainMerged(@RequestParam(required=false) short[] domain_id, HttpServletRequest request) throws IOException {
@@ -82,7 +80,6 @@ public class RealtimeAPIController extends PluginController {
                     sb.append("jennifer_domain_hit_hour{application=\"" + obj.getString("domainName") + "\", domain_id=\"" + obj.getInt("domainId") +"\"} " + obj.getInt("hitHour")).append(newline);
 
                     // get each instance instance
-                    // http://mon-trjensearch201z.prod.jp.local:7900/api/realtime/instance?token=kJ9Jnz2C3r2&domain_id=100
                     // for instances information
                     url = new URL(URL + "/api/realtime/instance?token=" + TOKEN + "&domain_id=" + sid);
                     conn = (HttpURLConnection) url.openConnection();
