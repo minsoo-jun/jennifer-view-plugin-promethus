@@ -18,8 +18,8 @@ import java.util.*;
 
 @Controller
 public class RealtimeAPIController extends PluginController {
-    private static final String URL = PropertyUtil.getValue("realtimeapi", "url", "http://127.0.0.1:7900");
-    private static final String TOKEN = PropertyUtil.getValue("realtimeapi", "token", "");
+    private static final String URL = PropertyUtil.getValue("prometheus", "url", "http://127.0.0.1:7900");
+    private static final String TOKEN = PropertyUtil.getValue("prometheus", "token", "");
 
     @RequestMapping(value = {"/realtimeapi/prometheus"}, method = RequestMethod.GET,produces = "text/plain; charset=utf-8")
     @ResponseBody
@@ -146,7 +146,7 @@ public class RealtimeAPIController extends PluginController {
 
         } else {
             if(jsonObj.has("exception")) {
-                return sb.toString();
+                return jsonObj.toString();
             }
         }
         return sb.toString();
