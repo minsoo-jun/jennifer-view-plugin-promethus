@@ -21,7 +21,7 @@ public class PrometheusFormat {
         // Make text for prometheus
         sb.append("# HELP jennifer_domain_dbmetrics_" + metrics + " Domain " + interval +" average value").append(newline);
         sb.append("# TYPE jennifer_domain_dbmetrics_" + metrics + " gauge").append(newline);
-        sb.append("jennifer_domain_dbmetrics_" + metrics + "{jdomain=" + objRealDomain.getString("domainName") + ", domain_id=" + objRealDomain.getInt("domainId") +"} " + objMetricsDomain.getDouble("value")).append(newline);
+        sb.append("jennifer_domain_dbmetrics_" + metrics + "{jdomain=\"" + objRealDomain.getString("domainName") + "\", domain_id=\"" + objRealDomain.getInt("domainId") +"\"} " + objMetricsDomain.getDouble("value")).append(newline);
         return sb.toString();
     }
 
