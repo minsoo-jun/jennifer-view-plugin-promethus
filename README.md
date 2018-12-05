@@ -27,7 +27,7 @@ Plugin options are shown in the table below.
 | endpoint | description | applied version |
 | ------------- |-------------|-------------|
 | http://{{ Jennifer Host }}/plugin/realtimeapi/prometheus?token={{ PLUGIN TOKEN }}| realtime data | v1.0.0 |
-| http://{{ Jennifer Host }}/plugin/dbmetrics/prometheus?token={{ PLUGIN TOKEN }}| dbmetrics data(1min avg.) | v1.0.0 |
+| http://{{ Jennifer Host }}/plugin/dbmetrics/prometheus?token={{ PLUGIN TOKEN }}| dbmetrics data(1min avg.) | v1.0.0, v1.1.0 |
 
 ## Release Note
 ### 2018-11-30: version v1.0.0 released  
